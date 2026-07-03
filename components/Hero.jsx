@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 /* 4K hero background — aerial night city-traffic light trails.
    Generated with Higgsfield (Nano Banana Pro, 5504x3072). */
@@ -95,20 +96,20 @@ export default function Hero() {
           className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"
           style={{ animationDelay: "0.4s" }}
         >
-          <a
-            href="#services"
+          <Link
+            href="/services"
             className="inline-flex w-full items-center justify-center gap-3 rounded-md bg-brand px-8 py-3.5 text-sm font-semibold tracking-[0.12em] text-white shadow-sm transition-colors hover:bg-[#173C82] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:w-auto"
           >
             OUR SERVICES
             <ArrowRight />
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            href="/about"
             className="inline-flex w-full items-center justify-center gap-3 rounded-md border border-white/40 px-8 py-3.5 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:w-auto"
           >
             ABOUT US
             <ArrowRight />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
