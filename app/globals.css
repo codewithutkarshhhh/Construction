@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-bodygrey font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Short blue accent bar used beneath card titles and the hero divider. */
+  .underline-accent {
+    @apply block h-[3px] w-9 rounded-full bg-brand;
+  }
+}
+
+/* Faint decorative geometric grid used in the hero corners. Very low opacity,
+   never interactive. */
+.hero-pattern {
+  background-image:
+    linear-gradient(to right, rgba(30, 74, 156, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 74, 156, 0.06) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 45%,
+    transparent 55%,
+    black 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 45%,
+    transparent 55%,
+    black 100%
+  );
+}
+
+/* Small dotted-grid decorative element (hero corners + image band). */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(30, 74, 156, 0.35) 1.4px,
+    transparent 1.4px
+  );
+  background-size: 14px 14px;
+}
+
+.dot-grid-light {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.55) 1.4px,
+    transparent 1.4px
+  );
+  background-size: 14px 14px;
+}
