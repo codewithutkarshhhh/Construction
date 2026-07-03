@@ -1,3 +1,5 @@
+import { TextGenerateEffect } from "./TextGenerateEffect";
+
 /**
  * Interior page banner — a compact navy hero used at the top of every
  * page except Home. Keeps the site's dark/geometric language without the
@@ -26,9 +28,11 @@ export default function PageHeader({ eyebrow, title, subtitle }) {
             {eyebrow}
           </p>
         )}
-        <h1 className="animate-fade-up mt-4 text-4xl font-bold uppercase tracking-tight text-white drop-shadow sm:text-5xl lg:text-6xl">
-          {title}
-        </h1>
+        <TextGenerateEffect
+          as="h1"
+          words={title}
+          className="mt-4 block text-4xl font-bold uppercase tracking-tight text-white drop-shadow sm:text-5xl lg:text-6xl"
+        />
 
         <div
           className="animate-fade-up mt-6 flex items-center justify-center gap-2"
