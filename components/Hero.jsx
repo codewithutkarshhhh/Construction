@@ -1,3 +1,10 @@
+import Image from "next/image";
+
+/* 4K hero background — aerial night city-traffic light trails.
+   Generated with Higgsfield (Nano Banana Pro, 5504x3072). */
+const HERO_BG_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260703_183914_494e037f-eaf4-4810-be4a-f380af0483b6.png";
+
 function ArrowRight({ className = "" }) {
   return (
     <svg
@@ -22,17 +29,17 @@ function ArrowRight({ className = "" }) {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy">
-      {/* 4K animated background — flowing city-traffic light trails (autoplay, muted, looping) */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* 4K background — aerial city-traffic light trails */}
+      <Image
+        src={HERO_BG_URL}
+        alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
-      </video>
+        fill
+        priority
+        unoptimized
+        sizes="100vw"
+        className="pointer-events-none object-cover"
+      />
 
       {/* navy gradient overlay for headline legibility */}
       <div
