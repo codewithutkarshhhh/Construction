@@ -32,10 +32,7 @@ header and footer via `app/layout.js`.
 | `/`         | `app/page.js`           | Hero, intro, four pillars, why-choose, clients |
 | `/about`    | `app/about/page.js`     | Who we are, mission, vision, values, leadership|
 | `/services` | `app/services/page.js`  | Advisory services + heavy machinery on contract|
-| `/sectors`  | `app/sectors/page.js`   | Telecom, energy, digital, public, commercial   |
 | `/clients`  | `app/clients/page.js`   | Client roster                                  |
-| `/insights` | `app/insights/page.js`  | Blog / news placeholder structure              |
-| `/careers`  | `app/careers/page.js`   | Open roles + how to apply                      |
 | `/contact`  | `app/contact/page.js`   | Contact details + inquiry form                 |
 
 ## Structure
