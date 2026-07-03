@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /**
  * PKS Infratech brand mark + wordmark.
  *
@@ -7,7 +9,7 @@
  */
 export default function Logo() {
   return (
-    <a href="#" className="flex items-center gap-3" aria-label="PKS Infratech — home">
+    <Link href="/" className="flex items-center gap-3" aria-label="PKS Infratech — home">
       <svg
         width="52"
         height="52"
@@ -45,6 +47,6 @@ export default function Logo() {
           ISO 9001:2015 CERTIFIED COMPANY
         </span>
       </span>
-    </a>
+    </Link>
   );
 }

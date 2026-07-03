@@ -1,8 +1,8 @@
-# PKS Infratech — Homepage
+# PKS Infratech — Website
 
-Single-page responsive marketing homepage for **Pradeep Kumar Singh Infratech
-Private Limited (PKS Infratech)**, an infrastructure development and advisory
-firm.
+Multi-page responsive marketing website for **Pradeep Kumar Singh Infratech
+Private Limited (PKS Infratech)**, an ISO 9001:2015 certified infrastructure
+development and advisory firm.
 
 Built with **Next.js (App Router)**, **React**, and **Tailwind CSS**.
 
@@ -22,15 +22,35 @@ npm run build
 npm start
 ```
 
+## Pages
+
+Each page is its own App Router route (separate file / URL), sharing a common
+header and footer via `app/layout.js`.
+
+| Route       | File                    | Content                                        |
+| ----------- | ----------------------- | ---------------------------------------------- |
+| `/`         | `app/page.js`           | Hero, intro, four pillars, why-choose, clients |
+| `/about`    | `app/about/page.js`     | Who we are, mission, vision, values, leadership|
+| `/services` | `app/services/page.js`  | Advisory services + heavy machinery on contract|
+| `/sectors`  | `app/sectors/page.js`   | Telecom, energy, digital, public, commercial   |
+| `/clients`  | `app/clients/page.js`   | Client roster                                  |
+| `/insights` | `app/insights/page.js`  | Blog / news placeholder structure              |
+| `/careers`  | `app/careers/page.js`   | Open roles + how to apply                      |
+| `/contact`  | `app/contact/page.js`   | Contact details + inquiry form                 |
+
 ## Structure
 
-- `app/layout.js` — fonts (Inter + Barlow Condensed via `next/font`) and metadata
-- `app/page.js` — assembles the page sections
+- `app/layout.js` — fonts (Switzer + Inter fallback), site-wide `Header`/`Footer`, metadata
+- `components/Header.jsx` — sticky nav with active-route highlighting + mobile menu
+- `components/Footer.jsx` — site-wide footer (links, contact, clients)
 - `components/Logo.jsx` — inline SVG brand mark + wordmark
-- `components/Header.jsx` — sticky nav with responsive hamburger menu
-- `components/Hero.jsx` — headline, subtext, and CTAs
-- `components/ServiceCards.jsx` — four service cards with line-art icons
-- `components/ImageBand.jsx` — full-width aerial-bridge banner
+- `components/Hero.jsx` — home hero with 4K background and CTAs
+- `components/PageHeader.jsx` — compact navy banner for interior pages
+- `components/ServiceCards.jsx` — home "four pillars" cards
+- `components/ServiceIcons.jsx` — shared line-art service/machinery icons
+- `components/WhyChoose.jsx`, `IntroStrip.jsx`, `ClientLogos.jsx`, `CTABand.jsx` — home + shared sections
+- `components/ContactForm.jsx` — client-side inquiry form (mailto submission)
+- `components/ui.jsx` — shared buttons, icons, and eyebrow primitives
 - `tailwind.config.js` — brand palette and font families
 
 ## Design tokens
@@ -44,6 +64,8 @@ npm start
 
 ## Notes
 
-- The banner photo is an Unsplash remote image loaded client-side; it renders in
-  a normal browser with internet access. Section copy (nav labels, headline,
-  service cards) lives in small arrays/consts for easy editing.
+- The contact form opens the visitor's email client with the details
+  pre-filled (no backend required). Section copy lives in small arrays/consts
+  in each page for easy editing.
+- Client logos are rendered as text wordmark chips until real logo assets are
+  supplied (`components/ClientLogos.jsx`).

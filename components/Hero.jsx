@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { TextGenerateEffect } from "./TextGenerateEffect";
 
 /* 4K hero background — aerial night city-traffic light trails.
    Generated with Higgsfield (Nano Banana Pro, 5504x3072). */
@@ -63,13 +65,16 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-5xl px-5 pb-16 pt-16 text-center sm:px-8 sm:pt-24 lg:pb-24">
         <h1 className="uppercase tracking-tight drop-shadow-lg">
-          <span className="animate-fade-up block text-white">Building Infrastructure.</span>
-          <span
-            className="animate-fade-up mt-1 block text-sky-300"
-            style={{ animationDelay: "0.12s" }}
-          >
-            Creating Enduring Value.
-          </span>
+          <TextGenerateEffect
+            words="Building Infrastructure."
+            className="block text-white"
+            duration={0.6}
+          />
+          <TextGenerateEffect
+            words="Creating Enduring Value."
+            className="mt-1 block text-sky-300"
+            duration={0.6}
+          />
         </h1>
 
         {/* double-dash divider */}
@@ -95,20 +100,20 @@ export default function Hero() {
           className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"
           style={{ animationDelay: "0.4s" }}
         >
-          <a
-            href="#services"
+          <Link
+            href="/services"
             className="inline-flex w-full items-center justify-center gap-3 rounded-md bg-brand px-8 py-3.5 text-sm font-semibold tracking-[0.12em] text-white shadow-sm transition-colors hover:bg-[#173C82] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:w-auto"
           >
             OUR SERVICES
             <ArrowRight />
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            href="/about"
             className="inline-flex w-full items-center justify-center gap-3 rounded-md border border-white/40 px-8 py-3.5 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy sm:w-auto"
           >
             ABOUT US
             <ArrowRight />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
