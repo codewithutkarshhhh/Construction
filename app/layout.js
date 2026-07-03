@@ -1,17 +1,25 @@
-import { Inter, Barlow_Condensed } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
+// Inter is kept only as a graceful fallback while Switzer loads.
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
 });
 
-const barlow = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["600", "700"],
+// Switzer (Fontshare) is self-hosted — it is not available on Google Fonts.
+// Primary body + heading typeface for the whole site.
+const switzer = localFont({
+  src: [
+    { path: "./fonts/Switzer-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Switzer-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Switzer-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/Switzer-700.woff2", weight: "700", style: "normal" },
+  ],
   display: "swap",
-  variable: "--font-barlow",
+  variable: "--font-switzer",
 });
 
 export const metadata = {
@@ -22,7 +30,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable}`}>
+    <html lang="en" className={`${switzer.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );
