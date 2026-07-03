@@ -5,10 +5,7 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Sectors", href: "/sectors" },
   { label: "Clients", href: "/clients" },
-  { label: "Insights", href: "/insights" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
 
