@@ -33,11 +33,11 @@ export default function ImageBand() {
         {/* overlaid text */}
         <div className="absolute bottom-8 left-6 max-w-lg sm:bottom-12 sm:left-14">
           <span className="mb-4 block h-[3px] w-12 rounded-full bg-brand" aria-hidden="true" />
-          <p className="text-2xl font-medium leading-tight text-white drop-shadow sm:text-3xl lg:text-4xl">
+          <h2 className="animate-fade-up leading-tight text-white drop-shadow">
             Enabling progress.
             <br />
             Empowering communities.
-          </p>
+          </h2>
         </div>
       </div>
     </section>

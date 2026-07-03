@@ -8,7 +8,24 @@
   }
 
   body {
-    @apply bg-surface text-bodygrey font-sans antialiased;
+    @apply bg-surface text-bodygrey font-sans antialiased text-body;
+  }
+
+  /* Fixed display type scale, powered by Switzer. */
+  h1 {
+    @apply font-display text-h1;
+  }
+
+  h2 {
+    @apply font-display text-h2;
+  }
+}
+
+/* Disable the font entrance animations for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none !important;
   }
 }
 
