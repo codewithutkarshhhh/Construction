@@ -164,15 +164,25 @@ export default function ServicesPage() {
               </ul>
 
               <p className="mt-8 text-sm text-white/60">
-                For machinery contract inquiries, reach out to our team directly.
+                See our full fleet, contract model, and the sectors we serve —
+                or reach out for machinery contract inquiries directly.
               </p>
-              <Link
-                href="/contact"
-                className="mt-5 inline-flex items-center gap-3 rounded-md bg-brand px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#173C82] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
-              >
-                MACHINERY INQUIRY
-                <ArrowRight />
-              </Link>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/services/heavy-machinery"
+                  className="inline-flex items-center justify-center gap-3 rounded-md bg-brand px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#173C82] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+                >
+                  EXPLORE MACHINERY SERVICES
+                  <ArrowRight />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-3 rounded-md border border-white/40 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+                >
+                  MACHINERY INQUIRY
+                  <ArrowRight />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
