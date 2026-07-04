@@ -1,4 +1,4 @@
-import { TextGenerateEffect } from "./TextGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 /**
  * Interior page banner — a compact navy hero used at the top of every

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TextGenerateEffect } from "./TextGenerateEffect";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 /* 4K hero background — aerial night city-traffic light trails.
    Generated with Higgsfield (Nano Banana Pro, 5504x3072). */
