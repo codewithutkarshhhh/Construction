@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ClientsPage() {
   return (
-    <>
+    <div className="page-clients">
       <PageHeader
         eyebrow="Our Clients"
         title="Trusted Partners"
@@ -20,13 +20,13 @@ export default function ClientsPage() {
       <ClientLogos
         heading="Delivering For Industry Leaders"
         intro="A snapshot of the organizations that rely on PKS Infratech for advisory and execution."
-        bg="bg-white"
+        bg="bg-transparent"
       />
 
       <CTABand
         title="Become our next success story"
         body="Partner with a team that brings advisory rigor and on-ground execution to every project."
       />
-    </>
+    </div>
   );
 }
