@@ -133,3 +133,32 @@
     animation: none;
   }
 }
+
+/* Services hero: slow pulsing core glow behind the HDD machine render, and a
+   dark wash so the pinned cinematic stage never bleeds the light page tint. */
+.hdd-hero {
+  --blend-color: #f8fafc;
+  isolation: isolate;
+}
+
+@keyframes hdd-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.hdd-glow {
+  animation: hdd-glow-pulse 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hdd-glow {
+    animation: none;
+  }
+}
