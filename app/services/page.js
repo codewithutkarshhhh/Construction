@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import CTABand from "@/components/CTABand";
+import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
 import {
   BlueprintIcon,
@@ -113,8 +114,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Heavy Machinery */}
-      <section id="machinery" className="scroll-mt-24 bg-navy">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
+      <section
+        id="machinery"
+        className="relative overflow-hidden scroll-mt-24 bg-navy"
+      >
+        <SectionFade edge="top" />
+        <SectionFade edge="bottom" />
+        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
             <div>
               <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">

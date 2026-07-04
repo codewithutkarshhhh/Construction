@@ -1,4 +1,5 @@
 import { PrimaryButton } from "./ui";
+import SectionFade from "./SectionFade";
 
 /**
  * Full-width closing call-to-action band on a navy field. Reused at the
@@ -16,6 +17,10 @@ export default function CTABand({
         aria-hidden="true"
         className="hero-pattern pointer-events-none absolute inset-0 opacity-50"
       />
+
+      {/* soft blend down from the light section above */}
+      <SectionFade edge="top" />
+
       <div className="relative mx-auto max-w-4xl px-5 py-16 text-center sm:px-8 lg:py-20">
         <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
           {title}

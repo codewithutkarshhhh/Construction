@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTABand from "@/components/CTABand";
+import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
 import { ExcavatorIcon } from "@/components/ServiceIcons";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -217,6 +218,9 @@ export default function HeavyMachineryPage() {
           className="hero-pattern pointer-events-none absolute inset-0 opacity-50"
         />
 
+        {/* soft blend into the light section below */}
+        <SectionFade edge="bottom" />
+
         <div className="relative mx-auto max-w-5xl px-5 py-20 text-center sm:px-8 sm:py-28">
           <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
             <span className="h-[2px] w-8 rounded-full bg-sky-300" aria-hidden="true" />
@@ -341,8 +345,13 @@ export default function HeavyMachineryPage() {
       </section>
 
       {/* How the contract model works */}
-      <section id="contract" className="scroll-mt-24 bg-navy">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
+      <section
+        id="contract"
+        className="relative overflow-hidden scroll-mt-24 bg-navy"
+      >
+        <SectionFade edge="top" />
+        <SectionFade edge="bottom" />
+        <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
           <div className="text-center">
             <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
               <span className="h-[2px] w-8 rounded-full bg-sky-300" aria-hidden="true" />

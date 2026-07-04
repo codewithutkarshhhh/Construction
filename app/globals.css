@@ -7,6 +7,14 @@
     scroll-behavior: smooth;
   }
 
+  /* Color that full-width navy bands dissolve into at their edges, so the
+     navy → light seam blends instead of showing a hard line. Defaults to the
+     light section tone used on the home page; each `.page-*` wrapper below
+     overrides it to match that route's own background wash. */
+  :root {
+    --blend-color: #ffffff;
+  }
+
   body {
     @apply bg-surface text-bodygrey font-sans antialiased text-body;
   }
@@ -77,21 +85,25 @@
    sections are set to bg-transparent so the wash shows through; navy bands
    (PageHeader / CTABand) stay opaque and cards keep their own surface. */
 .page-about {
+  --blend-color: #f6f9fe;
   background:
     radial-gradient(60% 45% at 85% 0%, rgba(30, 74, 156, 0.08), transparent 70%),
     linear-gradient(180deg, #f6f9fe 0%, #eaf1fb 100%);
 }
 .page-services {
+  --blend-color: #f8fafc;
   background:
     radial-gradient(55% 40% at 12% 4%, rgba(15, 27, 51, 0.06), transparent 70%),
     linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 .page-clients {
+  --blend-color: #fbfaf7;
   background:
     radial-gradient(55% 40% at 90% 6%, rgba(180, 130, 40, 0.08), transparent 70%),
     linear-gradient(180deg, #fbfaf7 0%, #f3f1ea 100%);
 }
 .page-contact {
+  --blend-color: #f5fbfb;
   background:
     radial-gradient(55% 40% at 10% 2%, rgba(20, 120, 130, 0.08), transparent 70%),
     linear-gradient(180deg, #f5fbfb 0%, #e9f4f4 100%);
