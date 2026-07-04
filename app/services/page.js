@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PageHeader from "@/components/PageHeader";
+import HddScrollHero from "@/components/HddScrollHero";
 import CTABand from "@/components/CTABand";
 import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
@@ -74,12 +74,8 @@ const MACHINERY_REASONS = [
 export default function ServicesPage() {
   return (
     <div className="page-services">
-      <PageHeader
-        eyebrow="Services"
-        title="What We Offer"
-        subtitle="A complete suite spanning strategic advisory, financial structuring, and on-ground infrastructure execution — including heavy machinery deployment on a contract basis."
-        bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171425_3ed10277-b06e-45d7-b60a-b1713e24075d.png"
-      />
+      {/* Cinematic scroll-driven 3D HDD machine hero */}
+      <HddScrollHero />
 
       {/* Advisory services */}
       <section>
