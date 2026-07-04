@@ -35,14 +35,14 @@ function PhoneIcon({ className = "" }) {
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="page-contact">
       <PageHeader
         eyebrow="Contact Us"
         title="Get in Touch"
         subtitle="Whether you need advisory support, funding assistance, or heavy machinery on contract — we'd love to hear about your project."
       />
 
-      <section className="bg-white">
+      <section>
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
             {/* Details */}
@@ -121,6 +121,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" role="img" aria-label="BSNL">
+  <g fill="none" stroke-width="6" stroke-linecap="round">
+    <path d="M12 28C20 16 40 16 48 28" stroke="#DB1920"/>
+    <path d="M12 38C20 50 40 50 48 38" stroke="#0161B0"/>
+  </g>
+  <text x="66" y="44" font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif" font-size="33" font-weight="700" letter-spacing="1" fill="#0161B0">BSNL</text>
+</svg>

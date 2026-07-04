@@ -72,7 +72,7 @@ const MACHINERY_REASONS = [
 
 export default function ServicesPage() {
   return (
-    <>
+    <div className="page-services">
       <PageHeader
         eyebrow="Services"
         title="What We Offer"
@@ -80,14 +80,14 @@ export default function ServicesPage() {
       />
 
       {/* Advisory services */}
-      <section className="bg-white">
+      <section>
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {SERVICES.map(({ id, title, Icon, items, desc }) => (
               <div
                 key={id}
                 id={id}
-                className="scroll-mt-24 rounded-2xl border border-slate-100 bg-surface p-8 shadow-card"
+                className="scroll-mt-24 rounded-2xl border border-slate-100 bg-white p-8 shadow-card"
               >
                 <Icon className="h-14 w-14 text-brand" />
                 <h2 className="mt-6 text-xl font-bold uppercase tracking-wide text-navy">
@@ -192,6 +192,6 @@ export default function ServicesPage() {
         title="Need advisory, funding, or machinery on contract?"
         body="Tell us about your project and we'll put the right capability behind it."
       />
-    </>
+    </div>
   );
 }

@@ -1,18 +1,22 @@
 import { Eyebrow } from "./ui";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
-/* The roster is intentionally text-based wordmark chips — clean, crisp at any
-   size, and dependency-free until real logo assets are supplied. */
+/* Client logos live as self-contained SVGs in /public/logos — served from the
+   site's own origin, so there are no external hotlinks to break. Airtel and Jio
+   use their official brand marks; the remaining files are drop-in replaceable
+   with official artwork of the same name, no code change required.
+   `name` doubles as the accessible label. */
 export const CLIENTS = [
-  "NIPL",
-  "BSNL",
-  "BBNL",
-  "Airtel",
-  "Jio",
-  "HFCL",
-  "NCC",
-  "GAIL",
-  "STL Tech",
-  "Vmart",
+  { name: "NIPL", logo: "/logos/nipl.svg" },
+  { name: "BSNL", logo: "/logos/bsnl.svg" },
+  { name: "BBNL", logo: "/logos/bbnl.svg" },
+  { name: "Airtel", logo: "/logos/airtel.svg" },
+  { name: "Jio", logo: "/logos/jio.svg" },
+  { name: "HFCL", logo: "/logos/hfcl.svg" },
+  { name: "NCC", logo: "/logos/ncc.svg" },
+  { name: "GAIL", logo: "/logos/gail.svg" },
+  { name: "STL Tech", logo: "/logos/stl.svg" },
+  { name: "Vmart", logo: "/logos/vmart.svg" },
 ];
 
 export default function ClientLogos({
@@ -28,14 +32,33 @@ export default function ClientLogos({
           <p className="mx-auto mt-4 max-w-2xl text-bodygrey">{intro}</p>
         </div>
 
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {CLIENTS.map((name) => (
-            <li
+        <InfiniteSlider
+          gap={56}
+          speed={40}
+          speedOnHover={12}
+          className="mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+        >
+          {CLIENTS.map(({ name, logo }) => (
+            <div
               key={name}
-              className="flex items-center justify-center rounded-xl border border-slate-100 bg-surface px-4 py-6 text-lg font-bold uppercase tracking-wide text-navy shadow-sm transition-colors hover:border-brand/40 hover:text-brand"
+              className="flex h-16 items-center justify-center"
+              title={name}
             >
-              {name}
-            </li>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logo}
+                alt={`${name} logo`}
+                loading="lazy"
+                className="h-8 w-auto max-w-[160px] object-contain transition duration-300 hover:scale-105"
+              />
+            </div>
+          ))}
+        </InfiniteSlider>
+
+        {/* Static, screen-reader-friendly roster (the marquee is decorative motion). */}
+        <ul className="sr-only">
+          {CLIENTS.map(({ name }) => (
+            <li key={name}>{name}</li>
           ))}
         </ul>
       </div>
