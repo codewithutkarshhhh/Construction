@@ -71,3 +71,28 @@
   );
   background-size: 14px 14px;
 }
+
+/* Infinite marquee (client logo strip). The track holds two copies of the
+   children and slides by -50% for a seamless loop; duration is set inline. */
+@keyframes infinite-slider-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.infinite-slider-track {
+  animation: infinite-slider-move var(--slider-duration, 40s) linear infinite;
+}
+
+.infinite-slider:hover .infinite-slider-track {
+  animation-duration: var(--slider-duration-hover, var(--slider-duration, 40s));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinite-slider-track {
+    animation: none;
+  }
+}

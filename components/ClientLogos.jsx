@@ -1,8 +1,11 @@
 import { Eyebrow } from "./ui";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
-/* Each client is rendered from a self-contained, brand-accurate SVG wordmark in
-   /public/logos — crisp at any size and dependency-free (no external hotlinks).
-   `name` doubles as the accessible label and the text fallback. */
+/* Client logos live as self-contained SVGs in /public/logos — served from the
+   site's own origin, so there are no external hotlinks to break. Airtel and Jio
+   use their official brand marks; the remaining files are drop-in replaceable
+   with official artwork of the same name, no code change required.
+   `name` doubles as the accessible label. */
 export const CLIENTS = [
   { name: "NIPL", logo: "/logos/nipl.svg" },
   { name: "BSNL", logo: "/logos/bsnl.svg" },
@@ -29,20 +32,33 @@ export default function ClientLogos({
           <p className="mx-auto mt-4 max-w-2xl text-bodygrey">{intro}</p>
         </div>
 
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <InfiniteSlider
+          gap={56}
+          speed={40}
+          speedOnHover={12}
+          className="mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+        >
           {CLIENTS.map(({ name, logo }) => (
-            <li
+            <div
               key={name}
-              className="flex items-center justify-center rounded-xl border border-slate-100 bg-surface px-4 py-6 shadow-sm transition-colors hover:border-brand/40"
+              className="flex h-16 items-center justify-center"
+              title={name}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo}
                 alt={`${name} logo`}
                 loading="lazy"
-                className="h-8 w-auto max-w-full object-contain"
+                className="h-8 w-auto max-w-[160px] object-contain transition duration-300 hover:scale-105"
               />
-            </li>
+            </div>
+          ))}
+        </InfiniteSlider>
+
+        {/* Static, screen-reader-friendly roster (the marquee is decorative motion). */}
+        <ul className="sr-only">
+          {CLIENTS.map(({ name }) => (
+            <li key={name}>{name}</li>
           ))}
         </ul>
       </div>
