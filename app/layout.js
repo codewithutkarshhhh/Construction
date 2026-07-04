@@ -37,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${switzer.variable} ${inter.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col pb-24 lg:pb-0">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

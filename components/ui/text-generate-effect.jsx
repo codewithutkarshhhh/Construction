@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -58,14 +58,17 @@ export function TextGenerateEffect({
   return (
     <Tag ref={scope} className={cn(className)}>
       {wordsArray.map((word, idx) => (
-        <motion.span
-          key={word + idx}
-          className="inline-block text-current opacity-0"
-          style={{ filter: filter ? "blur(10px)" : "none" }}
-        >
-          {word}
+        <Fragment key={word + idx}>
+          <motion.span
+            className="inline-block text-current opacity-0"
+            style={{ filter: filter ? "blur(10px)" : "none" }}
+          >
+            {word}
+          </motion.span>
+          {/* Space lives BETWEEN the inline-block word spans (as its own text
+              node) so it isn't collapsed as trailing whitespace inside a box. */}
           {idx < wordsArray.length - 1 ? " " : ""}
-        </motion.span>
+        </Fragment>
       ))}
     </Tag>
   );
