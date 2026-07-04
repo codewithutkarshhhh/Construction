@@ -77,6 +77,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="What We Offer"
         subtitle="A complete suite spanning strategic advisory, financial structuring, and on-ground infrastructure execution — including heavy machinery deployment on a contract basis."
+        bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171425_3ed10277-b06e-45d7-b60a-b1713e24075d.png"
       />
 
       {/* Advisory services */}

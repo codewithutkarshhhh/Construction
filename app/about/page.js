@@ -31,6 +31,7 @@ export default function AboutPage() {
         eyebrow="About Us"
         title="Who We Are"
         subtitle="An ISO 9001:2015 certified infrastructure development and advisory company — working at the intersection of strategy and on-ground execution."
+        bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171422_57848346-b906-441a-ba1d-a28a27877148.png"
       />
 
       {/* Intro + image grid (About-block style) */}

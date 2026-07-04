@@ -40,6 +40,7 @@ export default function ContactPage() {
         eyebrow="Contact Us"
         title="Get in Touch"
         subtitle="Whether you need advisory support, funding assistance, or heavy machinery on contract — we'd love to hear about your project."
+        bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171431_5b39e8bb-6826-421b-aca6-a1c5c722fabe.png"
       />
 
       <section>
