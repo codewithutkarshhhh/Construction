@@ -111,6 +111,12 @@ export default function HddScrollHero() {
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cw, ch);
+    // Resizing the canvas resets context state, so (re)enable the highest-
+    // quality resampler on every draw. The 1080p frames are cover-fit and
+    // upscaled on high-DPI screens; "high" smoothing keeps the wireframe
+    // edges crisp instead of the default cheap bilinear blur.
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
     const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
     const dw = img.naturalWidth * scale;
     const dh = img.naturalHeight * scale;
