@@ -1,5 +1,4 @@
 import { CheckIcon, Eyebrow } from "./ui";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const REASONS = [
   {
@@ -30,12 +29,9 @@ export default function WhyChoose() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
         <div className="text-center">
           <Eyebrow className="justify-center">Why PKS Infratech</Eyebrow>
-          <TextGenerateEffect
-            as="h2"
-            inView
-            words="Built to Deliver, End to End"
-            className="mt-4 text-3xl font-bold uppercase tracking-tight text-navy sm:text-4xl"
-          />
+          <h2 className="mt-4 text-3xl font-bold uppercase tracking-tight text-navy sm:text-4xl">
+            Built to Deliver, End to End
+          </h2>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

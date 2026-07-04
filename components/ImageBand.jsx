@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 /* Aerial highway-interchange / cable-stayed bridge — Unsplash, infrastructure theme. */
 const BANNER_URL =
@@ -34,19 +33,10 @@ export default function ImageBand() {
         {/* overlaid text */}
         <div className="absolute bottom-8 left-6 max-w-lg sm:bottom-12 sm:left-14">
           <span className="mb-4 block h-[3px] w-12 rounded-full bg-brand" aria-hidden="true" />
-          <h2 className="leading-tight text-white drop-shadow">
-            <TextGenerateEffect
-              as="span"
-              inView
-              words="Enabling progress."
-              className="block"
-            />
-            <TextGenerateEffect
-              as="span"
-              inView
-              words="Empowering communities."
-              className="block"
-            />
+          <h2 className="animate-fade-up leading-tight text-white drop-shadow">
+            Enabling progress.
+            <br />
+            Empowering communities.
           </h2>
         </div>
       </div>

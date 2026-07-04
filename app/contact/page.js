@@ -1,7 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import { Eyebrow } from "@/components/ui";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const metadata = {
   title: "Contact Us",
@@ -49,12 +48,9 @@ export default function ContactPage() {
             {/* Details */}
             <div>
               <Eyebrow>Reach Us</Eyebrow>
-              <TextGenerateEffect
-                as="h2"
-                inView
-                words="Pradeep Kumar Singh Infratech Private Limited"
-                className="mt-4 text-2xl font-bold text-navy"
-              />
+              <h2 className="mt-4 text-2xl font-bold text-navy">
+                Pradeep Kumar Singh Infratech Private Limited
+              </h2>
               <p className="mt-2 text-sm text-bodygrey">
                 ISO 9001:2015 Certified Company
               </p>
