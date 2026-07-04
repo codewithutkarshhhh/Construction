@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTABand from "@/components/CTABand";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
 import { ExcavatorIcon } from "@/components/ServiceIcons";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const metadata = {
   title: "Heavy Machinery & Equipment Services",
@@ -222,10 +223,19 @@ export default function HeavyMachineryPage() {
             Heavy Machinery — Available on Contract
             <span className="h-[2px] w-8 rounded-full bg-sky-300" aria-hidden="true" />
           </span>
-          <h1 className="mt-6 text-4xl font-bold uppercase tracking-tight text-white drop-shadow sm:text-5xl lg:text-6xl">
-            Powering Infrastructure
-            <br />
-            <span className="text-sky-300">On the Ground.</span>
+          <h1 className="mt-6 text-4xl font-bold uppercase tracking-tight drop-shadow sm:text-5xl lg:text-6xl">
+            <TextGenerateEffect
+              as="span"
+              words="Powering Infrastructure"
+              className="block text-white"
+              duration={0.6}
+            />
+            <TextGenerateEffect
+              as="span"
+              words="On the Ground."
+              className="mt-1 block text-sky-300"
+              duration={0.6}
+            />
           </h1>
           <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
             From fiber-optic trenching to pipeline installation, PKS Infratech
