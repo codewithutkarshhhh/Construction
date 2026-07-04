@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import SectionFade from "@/components/SectionFade";
 
 /* 4K hero background — aerial night city-traffic light trails.
    Generated with Higgsfield (Nano Banana Pro, 5504x3072). */
@@ -62,6 +63,9 @@ export default function Hero() {
         aria-hidden="true"
         className="dot-grid pointer-events-none absolute left-8 bottom-10 hidden h-24 w-32 opacity-40 sm:block"
       />
+
+      {/* soft blend into the light section below */}
+      <SectionFade edge="bottom" />
 
       <div className="relative mx-auto max-w-5xl px-5 pb-16 pt-16 text-center sm:px-8 sm:pt-24 lg:pb-24">
         <h1 className="uppercase tracking-tight drop-shadow-lg">

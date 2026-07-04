@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import SectionFade from "@/components/SectionFade";
 
 /**
  * Interior page banner — a compact navy hero used at the top of every
@@ -46,6 +47,9 @@ export default function PageHeader({ eyebrow, title, subtitle, bgImage }) {
         aria-hidden="true"
         className="dot-grid pointer-events-none absolute left-8 bottom-8 hidden h-20 w-28 opacity-40 sm:block"
       />
+
+      {/* soft blend into the light section below */}
+      <SectionFade edge="bottom" />
 
       <div className="relative mx-auto max-w-5xl px-5 py-16 text-center sm:px-8 sm:py-20">
         {eyebrow && (
