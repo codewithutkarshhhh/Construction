@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import CTABand from "@/components/CTABand";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import {
   BlueprintIcon,
   PeopleIcon,
@@ -122,17 +123,20 @@ export default function ServicesPage() {
               </span>
               <div className="mt-5 flex items-start gap-4">
                 <ExcavatorIcon className="h-14 w-14 shrink-0 text-sky-300" />
-                <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl">
-                  Heavy Machinery &amp; Equipment Services
-                </h2>
+                <TextGenerateEffect
+                  as="h2"
+                  inView
+                  words="Heavy Machinery & Equipment Services"
+                  className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl"
+                />
               </div>
-              <p className="mt-6 leading-relaxed text-white/80">
-                PKS Infratech maintains and operates a dedicated fleet of heavy
-                machinery for infrastructure execution — available for deployment
-                on a <strong className="text-white">contract / rental basis</strong>{" "}
-                to telecom, energy, and infrastructure companies undertaking
-                large-scale rollouts.
-              </p>
+              <TextGenerateEffect
+                as="p"
+                inView
+                filter={false}
+                words="PKS Infratech maintains and operates a dedicated fleet of heavy machinery for infrastructure execution — available for deployment on a contract / rental basis to telecom, energy, and infrastructure companies undertaking large-scale rollouts."
+                className="mt-6 font-normal leading-relaxed text-white/80"
+              />
 
               <h3 className="mt-8 text-sm font-bold uppercase tracking-[0.16em] text-white">
                 Equipment available includes

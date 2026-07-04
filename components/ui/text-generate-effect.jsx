@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -9,12 +9,15 @@ import { cn } from "@/lib/utils";
  * into place in sequence.
  *
  * Adapted for this JS project (types stripped from the original .tsx) with
- * two extensions over the canonical component so it can be reused across the
- * site's headings:
+ * three extensions over the canonical component so it can be reused across the
+ * site's headings and lead paragraphs:
  *   - `as` prop: render as any element (defaults to a <span>) so it can be a
- *     semantic <h1> without an extra wrapper.
+ *     semantic <h1>/<h2>/<p> without an extra wrapper.
  *   - color inheritance: words use `currentColor` instead of a hardcoded
  *     black/white, so the same effect works on light and navy backgrounds.
+ *   - `inView` prop: when true the animation waits until the element scrolls
+ *     into view instead of firing on mount — needed for below-the-fold
+ *     content, which would otherwise finish animating before it's seen.
  *
  * Props:
  *   words     {string}  The text to animate (space-separated; required).
@@ -22,6 +25,7 @@ import { cn } from "@/lib/utils";
  *   filter    {boolean} Apply the blur-in filter (default true).
  *   duration  {number}  Per-word animation duration in seconds (default 0.5).
  *   as        {Element} Element/tag to render as (default "span").
+ *   inView    {boolean} Trigger on scroll into view rather than on mount.
  */
 export function TextGenerateEffect({
   words,
@@ -29,11 +33,15 @@ export function TextGenerateEffect({
   filter = true,
   duration = 0.5,
   as: Tag = "span",
+  inView = false,
 }) {
   const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true, margin: "-80px" });
+  const shouldAnimate = inView ? isInView : true;
   const wordsArray = words.split(" ");
 
   useEffect(() => {
+    if (!shouldAnimate) return;
     animate(
       "span",
       {
@@ -45,7 +53,7 @@ export function TextGenerateEffect({
         delay: stagger(0.12),
       }
     );
-  }, [scope.current]);
+  }, [scope.current, shouldAnimate]);
 
   return (
     <Tag ref={scope} className={cn(className)}>

@@ -1,4 +1,5 @@
 import { Eyebrow } from "./ui";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 /* The roster is intentionally text-based wordmark chips — clean, crisp at any
    size, and dependency-free until real logo assets are supplied. */
@@ -25,7 +26,13 @@ export default function ClientLogos({
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
         <div className="text-center">
           <Eyebrow className="justify-center">{heading}</Eyebrow>
-          <p className="mx-auto mt-4 max-w-2xl text-bodygrey">{intro}</p>
+          <TextGenerateEffect
+            as="p"
+            inView
+            filter={false}
+            words={intro}
+            className="mx-auto mt-4 max-w-2xl font-normal text-bodygrey"
+          />
         </div>
 
         <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">

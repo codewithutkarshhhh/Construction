@@ -1,6 +1,7 @@
 import PageHeader from "@/components/PageHeader";
 import CTABand from "@/components/CTABand";
 import { Eyebrow, CheckIcon } from "@/components/ui";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const metadata = {
   title: "About Us",
@@ -40,14 +41,13 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 lg:py-20">
           <div className="space-y-6 text-lg leading-relaxed text-navy">
-            <p>
-              Pradeep Kumar Singh Infratech Private Limited (PKS Infratech) is an
-              ISO 9001:2015 certified infrastructure development and advisory
-              company. We work at the intersection of strategic advisory and
-              on-ground execution — helping our clients plan, finance, and build
-              critical infrastructure across the telecom, energy, and utility
-              sectors.
-            </p>
+            <TextGenerateEffect
+              as="p"
+              inView
+              filter={false}
+              words="Pradeep Kumar Singh Infratech Private Limited (PKS Infratech) is an ISO 9001:2015 certified infrastructure development and advisory company. We work at the intersection of strategic advisory and on-ground execution — helping our clients plan, finance, and build critical infrastructure across the telecom, energy, and utility sectors."
+              className="font-normal"
+            />
             <p>
               What sets us apart is our dual capability: we don't just advise on
               infrastructure projects, we execute them. Our in-house fleet of
@@ -90,9 +90,12 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
           <div className="text-center">
             <Eyebrow className="justify-center">What We Stand For</Eyebrow>
-            <h2 className="mt-4 text-3xl font-bold uppercase tracking-tight text-navy sm:text-4xl">
-              Our Values
-            </h2>
+            <TextGenerateEffect
+              as="h2"
+              inView
+              words="Our Values"
+              className="mt-4 text-3xl font-bold uppercase tracking-tight text-navy sm:text-4xl"
+            />
           </div>
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
             {VALUES.map(({ title, body }) => (
