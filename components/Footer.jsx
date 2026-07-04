@@ -95,7 +95,7 @@ export default function Footer() {
             Our Clients
           </p>
           <p className="mt-3 text-sm text-white/70">
-            {CLIENTS.join(" · ")}
+            {CLIENTS.map((c) => c.name).join(" · ")}
           </p>
         </div>
 
