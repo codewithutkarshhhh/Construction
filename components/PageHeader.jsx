@@ -1,13 +1,38 @@
+import Image from "next/image";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 /**
  * Interior page banner — a compact navy hero used at the top of every
- * page except Home. Keeps the site's dark/geometric language without the
- * full-bleed 4K image treatment reserved for the landing page.
+ * page except Home. Each route passes its own distinct 4K background image
+ * (`bgImage`) so pages feel unique while sharing the landing page's
+ * cinematic navy-infrastructure vibe. A navy gradient overlay keeps the
+ * headline legible over any image.
  */
-export default function PageHeader({ eyebrow, title, subtitle }) {
+export default function PageHeader({ eyebrow, title, subtitle, bgImage }) {
   return (
     <section className="relative overflow-hidden bg-navy">
+      {/* distinct 4K background image, per page */}
+      {bgImage && (
+        <Image
+          src={bgImage}
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="pointer-events-none object-cover"
+        />
+      )}
+
+      {/* navy gradient overlay for headline legibility */}
+      {bgImage && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90"
+        />
+      )}
+
       {/* faint decorative geometric pattern */}
       <div
         aria-hidden="true"

@@ -15,6 +15,7 @@ export default function ClientsPage() {
         eyebrow="Our Clients"
         title="Trusted Partners"
         subtitle="We are proud to have delivered for some of the most recognized names across telecom, energy, and infrastructure."
+        bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171428_76fa2694-9400-4188-9fe8-8216513dbb38.png"
       />
 
       <ClientLogos
