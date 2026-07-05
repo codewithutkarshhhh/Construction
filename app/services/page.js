@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HddScrollHero from "@/components/HddScrollHero";
+import MarqueeBand from "@/components/MarqueeBand";
 import CTABand from "@/components/CTABand";
 import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
@@ -108,6 +109,13 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeBand
+        rows={[
+          "PLAN • FUND • BUILD • DELIVER • ",
+          "JCB EXCAVATORS • HDD RIGS • ",
+        ]}
+      />
 
       {/* Heavy Machinery */}
       <section

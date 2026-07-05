@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
+import MarqueeBand from "@/components/MarqueeBand";
 import { Eyebrow } from "@/components/ui";
 
 export const metadata = {
@@ -122,6 +123,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeBand tone="navy" rows={["LET'S BUILD TOGETHER • "]} />
     </div>
   );
 }

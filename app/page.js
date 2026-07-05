@@ -5,6 +5,7 @@ import ImageBand from "@/components/ImageBand";
 import WhyChoose from "@/components/WhyChoose";
 import { Gallery4 } from "@/components/ui/gallery4";
 import ClientLogos from "@/components/ClientLogos";
+import MarqueeBand from "@/components/MarqueeBand";
 import CTABand from "@/components/CTABand";
 
 export default function Home() {
@@ -17,6 +18,12 @@ export default function Home() {
       <WhyChoose />
       <Gallery4 />
       <ClientLogos bg="bg-surface" />
+      <MarqueeBand
+        rows={[
+          "ADVISORY • FUNDING • EXECUTION • ",
+          "TELECOM • ENERGY • UTILITY • ",
+        ]}
+      />
       <CTABand />
     </>
   );

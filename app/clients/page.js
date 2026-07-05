@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import ClientLogos from "@/components/ClientLogos";
+import MarqueeBand from "@/components/MarqueeBand";
 import CTABand from "@/components/CTABand";
 
 export const metadata = {
@@ -22,6 +23,14 @@ export default function ClientsPage() {
         heading="Delivering For Industry Leaders"
         intro="A snapshot of the organizations that rely on PKS Infratech for advisory and execution."
         bg="bg-transparent"
+      />
+
+      <MarqueeBand
+        className="bg-transparent"
+        textClassName="text-navy/20"
+        rows={[
+          "NIPL • BSNL • BBNL • AIRTEL • JIO • HFCL • NCC • GAIL • STL TECH • VMART • ",
+        ]}
       />
 
       <CTABand
