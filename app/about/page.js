@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import MarqueeBand from "@/components/MarqueeBand";
 import CTABand from "@/components/CTABand";
 import { Eyebrow, PrimaryButton } from "@/components/ui";
 import { ExcavatorIcon } from "@/components/ServiceIcons";
@@ -120,6 +121,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeBand
+        tone="white"
+        rows={["ADVISORY RIGOR • ON-GROUND EXECUTION • "]}
+      />
 
       {/* Trusted-by logo row */}
       <section>

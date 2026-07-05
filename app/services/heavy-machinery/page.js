@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTABand from "@/components/CTABand";
+import MarqueeBand from "@/components/MarqueeBand";
 import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
 import { ExcavatorIcon } from "@/components/ServiceIcons";
@@ -459,6 +460,10 @@ export default function HeavyMachineryPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeBand
+        rows={["JCB • HDD • OPERATORS INCLUDED • PAN-INDIA • "]}
+      />
 
       <CTABand
         title="Need machinery for your next project?"
