@@ -4,18 +4,12 @@ import MarqueeBand from "@/components/MarqueeBand";
 import CTABand from "@/components/CTABand";
 import SectionFade from "@/components/SectionFade";
 import { Eyebrow, CheckIcon, ArrowRight } from "@/components/ui";
-import {
-  BlueprintIcon,
-  PeopleIcon,
-  CoinsIcon,
-  ChartIcon,
-  ExcavatorIcon,
-} from "@/components/ServiceIcons";
+import { BlueprintIcon, ExcavatorIcon } from "@/components/ServiceIcons";
 
 export const metadata = {
   title: "Services",
   description:
-    "A complete suite of services spanning strategic advisory, financial structuring, and on-ground infrastructure execution — including heavy machinery deployment on a contract basis.",
+    "Services spanning strategic project advisory and on-ground infrastructure execution — including heavy machinery deployment on a contract basis.",
 };
 
 const SERVICES = [
@@ -25,27 +19,6 @@ const SERVICES = [
     Icon: BlueprintIcon,
     items: ["Techno-Financial Planning", "Design Engineering", "Project Management"],
     desc: "End-to-end guidance from project conception through execution, ensuring technical soundness and financial viability at every stage.",
-  },
-  {
-    id: "corporate-advisory",
-    title: "Corporate Advisory",
-    Icon: PeopleIcon,
-    items: ["Financial Structuring", "Transaction Advisory"],
-    desc: "Strategic support for structuring infrastructure transactions, capital arrangements, and corporate financial decisions.",
-  },
-  {
-    id: "funds-management",
-    title: "Funds Management",
-    Icon: CoinsIcon,
-    items: ["Fund Raising", "Fund Administration"],
-    desc: "Assistance in mobilizing project finance and managing fund administration through the project lifecycle.",
-  },
-  {
-    id: "portfolio-management",
-    title: "Portfolio Management",
-    Icon: ChartIcon,
-    items: ["Value Engineering", "Portfolio Administration"],
-    desc: "Optimizing asset and project portfolios for maximum value delivery and efficient administration.",
   },
 ];
 
@@ -81,7 +54,7 @@ export default function ServicesPage() {
       {/* Advisory services */}
       <section>
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6">
             {SERVICES.map(({ id, title, Icon, items, desc }) => (
               <div
                 key={id}
@@ -112,7 +85,7 @@ export default function ServicesPage() {
 
       <MarqueeBand
         rows={[
-          "PLAN • FUND • BUILD • DELIVER • ",
+          "PLAN • BUILD • DELIVER • ",
           "JCB EXCAVATORS • HDD RIGS • ",
         ]}
       />
@@ -200,7 +173,7 @@ export default function ServicesPage() {
       </section>
 
       <CTABand
-        title="Need advisory, funding, or machinery on contract?"
+        title="Need advisory or machinery on contract?"
         body="Tell us about your project and we'll put the right capability behind it."
       />
     </div>

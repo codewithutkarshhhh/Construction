@@ -5,7 +5,6 @@ import { ArrowRight } from "./ui";
 
 const INQUIRY_TYPES = [
   "Project Advisory",
-  "Corporate Advisory",
   "Machinery on Contract",
   "Careers",
   "General Inquiry",
