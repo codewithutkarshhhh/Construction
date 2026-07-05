@@ -257,7 +257,7 @@ export default function HddScrollHero() {
                       pointerEvents: active.opacity > 0.6 ? "auto" : "none",
                     }}
                   >
-                    <div className="rounded-3xl border border-white/12 bg-white/[0.06] p-7 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)] backdrop-blur-2xl sm:p-9">
+                    <div className="rounded-3xl border border-white/15 bg-[#0A1428]/85 p-7 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)] backdrop-blur-2xl sm:p-9">
                       <span className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-300">
                         <span
                           className="h-[2px] w-8 rounded-full bg-sky-300"
@@ -268,7 +268,7 @@ export default function HddScrollHero() {
                       <h2 className="mt-4 text-3xl font-bold uppercase leading-[1.05] tracking-tight text-white drop-shadow sm:text-[2.6rem]">
                         {stage.title}
                       </h2>
-                      <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
+                      <p className="mt-4 max-w-md text-sm leading-relaxed text-white/90 sm:text-base">
                         {stage.body}
                       </p>
 
@@ -305,12 +305,12 @@ export default function HddScrollHero() {
             {STATS.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 backdrop-blur-xl"
+                className="rounded-2xl border border-white/15 bg-[#0A1428]/75 px-5 py-4 backdrop-blur-xl"
               >
                 <p className="font-display text-2xl font-bold text-white">
                   {s.value}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
                   {s.label}
                 </p>
               </div>
