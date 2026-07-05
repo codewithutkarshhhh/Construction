@@ -42,7 +42,7 @@ export default function Home() {
       <FloatSection depth={72}>
         <MarqueeBand
           rows={[
-            "ADVISORY • FUNDING • EXECUTION • ",
+            "ADVISORY • EXECUTION • SINCE 2012 • ",
             "TELECOM • ENERGY • UTILITY • ",
           ]}
           textClassName="text-navy/15"

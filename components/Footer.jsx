@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-5 text-sm text-white/70">
-              ISO 9001:2015 Certified Company
+              ISO 9001:2015 Certified Company · Registered in 2012
             </p>
             <p className="mt-2 text-sm font-medium text-sky-300">
               Building Infrastructure. Creating Enduring Value.

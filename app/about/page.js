@@ -19,6 +19,7 @@ const SECONDARY_IMAGE =
   "https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260703_183914_494e037f-eaf4-4810-be4a-f380af0483b6.png";
 
 const ACHIEVEMENTS = [
+  { value: "2012", label: "Year the company was registered" },
   { value: "10+", label: "Client organizations served" },
   { value: "3", label: "Core sectors — telecom, energy & utility" },
   { value: "100%", label: "In-house execution capability" },
@@ -46,8 +47,8 @@ export default function AboutPage() {
               </h2>
             </div>
             <p className="text-lg leading-relaxed text-bodygrey">
-              Pradeep Kumar Singh Infratech Private Limited (PKS Infratech)
-              helps clients plan, finance, and build critical infrastructure
+              Registered in 2012, Pradeep Kumar Singh Infratech Private Limited
+              (PKS Infratech) helps clients plan and build critical infrastructure
               across the telecom, energy, and utility sectors. What sets us
               apart is our dual capability — we don&apos;t just advise, we
               execute.
