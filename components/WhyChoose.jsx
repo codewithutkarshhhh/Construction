@@ -2,7 +2,7 @@ import { CheckIcon, Eyebrow } from "./ui";
 
 const REASONS = [
   {
-    title: "ISO 9001:2015 Certified",
+    title: "ISO 9001:2012 Certified",
     body: "Quality-driven processes across every project.",
   },
   {

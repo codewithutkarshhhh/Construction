@@ -31,7 +31,7 @@ export const metadata = {
     template: "%s — PKS Infratech",
   },
   description:
-    "Pradeep Kumar Singh Infratech Private Limited (PKS Infratech) is an ISO 9001:2015 certified infrastructure development and advisory firm delivering sustainable growth through expert guidance, strategic partnerships, and disciplined execution.",
+    "Pradeep Kumar Singh Infratech Private Limited (PKS Infratech) is an ISO 9001:2012 certified infrastructure development and advisory firm delivering sustainable growth through expert guidance, strategic partnerships, and disciplined execution.",
 };
 
 export default function RootLayout({ children }) {

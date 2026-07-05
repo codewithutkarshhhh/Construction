@@ -114,7 +114,7 @@ const SECTORS = [
 ];
 
 const REASONS = [
-  "ISO 9001:2015 certified operational standards",
+  "ISO 9001:2012 certified operational standards",
   "Well-maintained, inspection-ready fleet",
   "Experienced, trained machine operators",
   "Pan-India mobilization capability",
