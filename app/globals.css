@@ -134,6 +134,115 @@
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Home cinematic experience                                            */
+/* A fixed 4K building render plays behind the whole home page; every  */
+/* section floats above it on frosted glass panels (see FloatSection). */
+/* ------------------------------------------------------------------ */
+
+.home-cinematic {
+  /* Navy bands on this page sit on glass, so edge fades dissolve to nothing
+     instead of to a solid page tone. */
+  --blend-color: transparent;
+}
+
+/* Shared floating-panel geometry: constrained width, generous rounding, and
+   vertical breathing room so the 4K stage stays visible between panels. */
+.home-cinematic .glass-panel,
+.home-cinematic .glass-panel-navy,
+.home-cinematic .glass-media {
+  position: relative;
+  width: min(1160px, calc(100% - 2rem));
+  margin-inline: auto;
+  margin-block: clamp(2.25rem, 5vh, 4rem);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Frosted white glassmorphism card. */
+.home-cinematic .glass-panel {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.48)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 32px 90px -36px rgba(15, 27, 51, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  backdrop-filter: blur(18px) saturate(1.35);
+}
+
+/* Frosted deep-navy glass (closing CTA band). */
+.home-cinematic .glass-panel-navy {
+  background: linear-gradient(
+    160deg,
+    rgba(15, 27, 51, 0.9),
+    rgba(15, 27, 51, 0.78)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 32px 90px -36px rgba(15, 27, 51, 0.55);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+
+/* Rounded media frame with no fill — full-bleed imagery keeps its own art. */
+.home-cinematic .glass-media {
+  box-shadow: 0 40px 110px -42px rgba(15, 27, 51, 0.6);
+}
+
+/* Sections inside floating panels drop their opaque band backgrounds so the
+   glass (and the 4K stage behind it) shows through; their inner cards keep
+   their own surfaces. */
+.home-cinematic .float-section section {
+  background-color: transparent !important;
+}
+
+/* Slow drifting pulse for the fixed background glow orbs. */
+@keyframes home-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-2%);
+  }
+}
+
+.home-glow {
+  animation: home-glow-pulse 8s ease-in-out infinite;
+}
+
+/* Scroll-cue dot in the hero's mouse outline. */
+@keyframes home-scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.home-scroll-dot {
+  animation: home-scroll-dot 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-glow,
+  .home-scroll-dot {
+    animation: none;
+  }
+}
+
 /* Services hero: slow pulsing core glow behind the HDD machine render, and a
    dark wash so the pinned cinematic stage never bleeds the light page tint. */
 .hdd-hero {
