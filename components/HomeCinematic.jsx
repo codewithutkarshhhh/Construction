@@ -69,7 +69,9 @@ export default function HomeCinematic({ children }) {
     const img = imagesRef.current[index];
     if (!img || !img.naturalWidth) return;
     const ctx = canvas.getContext("2d");
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // Render at up to 3× device pixels so the 4K source stays pin-sharp on
+    // retina displays instead of being resampled through a 1–2× buffer.
+    const dpr = Math.min(window.devicePixelRatio || 1, 3);
     const cw = canvas.clientWidth;
     const ch = canvas.clientHeight;
     if (canvas.width !== cw * dpr || canvas.height !== ch * dpr) {
@@ -207,15 +209,19 @@ export default function HomeCinematic({ children }) {
           style={{
             opacity: firstFrameReady ? 1 : 0,
             transition: "opacity 1s ease",
+            // GPU-cheap micro-contrast pop keeps the render looking crisp
+            // after cover-fit resampling.
+            filter: "contrast(1.06) saturate(1.08)",
           }}
         />
 
-        {/* Soft brand glow orbs drifting behind the glass panels */}
+        {/* Soft brand glow orbs drifting behind the glass panels — kept very
+            faint so they never haze the render itself. */}
         <div
           className="home-glow absolute left-[12%] top-[18%] h-[46vmin] w-[46vmin] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(56,150,255,0.16) 0%, rgba(30,74,156,0.07) 45%, transparent 70%)",
+              "radial-gradient(circle, rgba(56,150,255,0.08) 0%, rgba(30,74,156,0.03) 45%, transparent 70%)",
           }}
         />
         <div
@@ -223,19 +229,17 @@ export default function HomeCinematic({ children }) {
           style={{
             animationDelay: "-3s",
             background:
-              "radial-gradient(circle, rgba(30,74,156,0.12) 0%, rgba(56,150,255,0.05) 45%, transparent 70%)",
+              "radial-gradient(circle, rgba(30,74,156,0.06) 0%, rgba(56,150,255,0.02) 45%, transparent 70%)",
           }}
         />
 
-        {/* Faint blueprint grid to seat the model in space */}
-        <div className="hero-pattern absolute inset-0 opacity-40" />
-
-        {/* Readability veils — clear in the middle, gently white at the edges */}
+        {/* Header legibility strip only — the rest of the frame stays fully
+            clear so the 4K render reads at native sharpness. */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.12) 14%, rgba(255,255,255,0.06) 55%, rgba(255,255,255,0.3) 100%)",
+              "linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.04) 9%, transparent 16%)",
           }}
         />
       </div>
