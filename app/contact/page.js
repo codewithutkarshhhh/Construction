@@ -54,7 +54,7 @@ export default function ContactPage() {
                 Pradeep Kumar Singh Infratech Private Limited
               </h2>
               <p className="mt-2 text-sm text-bodygrey">
-                ISO 9001:2015 Certified Company
+                ISO 9001:2012 Certified Company
               </p>
 
               <div className="mt-8 space-y-6">

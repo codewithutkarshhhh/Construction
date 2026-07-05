@@ -1,7 +1,7 @@
 # PKS Infratech — Website
 
 Multi-page responsive marketing website for **Pradeep Kumar Singh Infratech
-Private Limited (PKS Infratech)**, an ISO 9001:2015 certified infrastructure
+Private Limited (PKS Infratech)**, an ISO 9001:2012 certified infrastructure
 development and advisory firm.
 
 Built with **Next.js (App Router)**, **React**, and **Tailwind CSS**.

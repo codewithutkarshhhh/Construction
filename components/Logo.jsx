@@ -44,7 +44,7 @@ export default function Logo() {
           INFRATECH PRIVATE LIMITED
         </span>
         <span className="mt-1 text-[9px] tracking-[0.28em] text-slate-400 sm:text-[10px]">
-          ISO 9001:2015 CERTIFIED COMPANY
+          ISO 9001:2012 CERTIFIED COMPANY
         </span>
       </span>
     </Link>

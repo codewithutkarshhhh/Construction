@@ -8,7 +8,7 @@ import { CLIENTS } from "@/components/ClientLogos";
 export const metadata = {
   title: "About Us",
   description:
-    "PKS Infratech is an ISO 9001:2015 certified infrastructure development and advisory company combining strategic advisory with on-ground execution across telecom, energy, and utility sectors.",
+    "PKS Infratech is an ISO 9001:2012 certified infrastructure development and advisory company combining strategic advisory with on-ground execution across telecom, energy, and utility sectors.",
 };
 
 /* Proven, whitelisted image sources already used elsewhere on the site
@@ -23,7 +23,7 @@ const ACHIEVEMENTS = [
   { value: "10+", label: "Client organizations served" },
   { value: "3", label: "Core sectors — telecom, energy & utility" },
   { value: "100%", label: "In-house execution capability" },
-  { value: "ISO 9001", label: "2015 certified processes" },
+  { value: "ISO 9001", label: "2012 certified processes" },
 ];
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About Us"
         title="Who We Are"
-        subtitle="An ISO 9001:2015 certified infrastructure development and advisory company — working at the intersection of strategy and on-ground execution."
+        subtitle="An ISO 9001:2012 certified infrastructure development and advisory company — working at the intersection of strategy and on-ground execution."
         bgImage="https://d8j0ntlcm91z4.cloudfront.net/user_3DOQayCkzLWb1jKyvrHBg2t8TL6/hf_20260704_171422_57848346-b906-441a-ba1d-a28a27877148.png"
       />
 
