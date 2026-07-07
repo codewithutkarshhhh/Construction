@@ -19,7 +19,7 @@ import { ArrowRight } from "@/components/ui";
 
 const FRAME_COUNT = 241;
 const framePath = (i) =>
-  `/hdd/frame-${String(i + 1).padStart(3, "0")}.jpg`;
+  `/hdd/frame-${String(i + 1).padStart(3, "0")}.webp`;
 
 /** Narrative captions, each mapped to a slice of scroll progress [0..1]. */
 const STAGES = [
@@ -112,9 +112,9 @@ export default function HddScrollHero() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cw, ch);
     // Resizing the canvas resets context state, so (re)enable the highest-
-    // quality resampler on every draw. The 1080p frames are cover-fit and
-    // upscaled on high-DPI screens; "high" smoothing keeps the wireframe
-    // edges crisp instead of the default cheap bilinear blur.
+    // quality resampler on every draw. The 4K frames are cover-fit to the
+    // viewport; "high" smoothing keeps the wireframe edges crisp instead of
+    // the default cheap bilinear blur.
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
     const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);

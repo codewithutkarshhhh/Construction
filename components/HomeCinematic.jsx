@@ -23,7 +23,7 @@ import { useEffect, useRef, useState } from "react";
 const FRAME_COUNT = 208;
 const COARSE_STEP = 6;
 const framePath = (i) =>
-  `/building/ezgif-frame-${String(i + 1).padStart(3, "0")}.jpg`;
+  `/building/frame-${String(i + 1).padStart(3, "0")}.webp`;
 
 function clamp(v, lo, hi) {
   return Math.max(lo, Math.min(hi, v));
