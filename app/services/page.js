@@ -98,7 +98,7 @@ export default function ServicesPage() {
         <SectionFade edge="top" />
         <SectionFade edge="bottom" />
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
                 <span className="h-[2px] w-8 rounded-full bg-sky-300" aria-hidden="true" />
@@ -134,11 +134,11 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
+            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
               <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">
                 Why contract our machinery
               </h3>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-6 flex flex-1 flex-col justify-evenly gap-4">
                 {MACHINERY_REASONS.map((reason) => (
                   <li key={reason} className="flex gap-3 text-white/85">
                     <CheckIcon className="mt-0.5 shrink-0 text-sky-300" />
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
 
-              <p className="mt-8 text-sm text-white/60">
+              <p className="mt-auto pt-8 text-sm text-white/60">
                 See our full fleet, contract model, and the sectors we serve —
                 or reach out for machinery contract inquiries directly.
               </p>

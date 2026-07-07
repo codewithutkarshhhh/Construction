@@ -299,8 +299,10 @@ export default function HddScrollHero() {
           </div>
         </div>
 
-        {/* Glass stat rail — fixed within the stage, top-right */}
-        <div className="pointer-events-none absolute right-5 top-24 z-10 hidden lg:block">
+        {/* Glass stat rail — fixed within the stage, top-right. Offset far
+            enough down that the sticky site header never clips the first
+            card. */}
+        <div className="pointer-events-none absolute right-5 top-36 z-10 hidden lg:block">
           <div className="flex flex-col gap-3">
             {STATS.map((s) => (
               <div
@@ -360,15 +362,22 @@ function clamp(v, lo, hi) {
 /**
  * Opacity + parallax offset for stage `i` given overall scroll `progress`.
  * Each stage owns an equal slice; it fades up as its slice arrives and fades
- * out as the next begins. Reduced-motion users see the first stage, static.
+ * out as the next begins. The ramp is steep so the panel plateaus at full
+ * opacity across most of its slice — otherwise the text spends the majority
+ * of the scroll semi-transparent with the bright machine render bleeding
+ * through it. Reduced-motion users see the first stage, static.
  */
 function stageOpacity(progress, i, reduced) {
   if (reduced) return { opacity: i === 0 ? 1 : 0, y: 0 };
   const slice = 1 / STAGES.length;
   const center = i * slice + slice / 2;
-  const dist = Math.abs(progress - center);
+  // Clamp to the first/last stage centers so the opening caption is fully
+  // visible at the top of the scroll and the closing caption (with its CTAs)
+  // stays fully visible at the end, instead of stalling mid-fade.
+  const eff = clamp(progress, slice / 2, 1 - slice / 2);
+  const dist = Math.abs(eff - center);
   const half = slice * 0.62;
-  const opacity = clamp(1 - dist / half, 0, 1);
-  const y = (progress - center) * -60; // gentle parallax
+  const opacity = clamp((1 - dist / half) * 2.6, 0, 1);
+  const y = (eff - center) * -60; // gentle parallax
   return { opacity, y };
 }
